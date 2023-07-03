@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Advanced Search</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            a{
+                position: absolute;
+                top: 15px;
+                right: 50px;
+                color: blue;
+                text-decoration: none;
+            }
+            a:hover{
+                text-decoration: underline;
+            }
+            
+            #title{
+                color: #d93025 ; 
+                font-size: 20px;
+                margin: 25px 35px;
+                font-weight: inherit;
+                font-style: inherit;
+
+            }
+            #den{
+                height:25px;
+                margin: 15px 10px;
+                font-weight: inherit;
+                font-style: inherit;
+            }
+            .line{
+                border-bottom: 1px solid rgba(128, 128, 128, 0.293);
+            }
+            
+            #align{
+                align-items:end;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img id="den" src="google.png" alt="Google Images" >
+                </div>
+                <div class="col-lg-6">
+                    <a href="index.html">Google Search</a>       
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 id="title">Advanced Search</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="line"></p>
+            </div>
+            </div>
+            
+           <form action="/search" id="s1zaZb" method="GET" name="f">
+                
+                
+                <div class="row">
+                    <div class="col-lg-3">
+                        Find these pages...
+                    </div>
+                    <div class="col-lg-6" id="empty">
+                        
+                    </div>
+                    <div class="col-lg-3">
+                        To do this in the search box:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        Containing all of these words:
+                    </div>
+                    <div class="col-lg-6" >
+                        <input id = "input" type="text" name="q">
+                    </div>
+                    <div class="col-lg-3">
+                        Write down the important words: taupe vole
+
+                    </div>
+                </div>
+            
+                
+           </form>
+            
+            
+
+
+        </div>
+          
+    </body>
+</html>
