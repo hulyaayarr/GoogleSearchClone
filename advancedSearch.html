@@ -1,32 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Advanced Search</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <style>
-            a{
+            ad{
                 position: absolute;
                 top: 15px;
                 right: 50px;
                 color: blue;
                 text-decoration: none;
             }
-            a:hover{
+            ad:hover{
                 text-decoration: underline;
             }
             
             #title{
                 color: #d93025 ; 
                 font-size: 20px;
-                margin: 25px 35px;
                 font-weight: inherit;
                 font-style: inherit;
+                margin: 15px;
 
             }
             #den{
                 height:25px;
-                margin: 15px 10px;
                 font-weight: inherit;
                 font-style: inherit;
             }
@@ -34,66 +32,586 @@
                 border-bottom: 1px solid rgba(128, 128, 128, 0.293);
             }
             
-            #align{
-                align-items:end;
+            .form-control{
+                border-radius: 1px;
+                border: 1px solid #d9d9d9;
+                border-top: 1px solid #c0c0c0;
+                font-size: 13px;
+                height: 25px;
+                padding: 1px 8px;
+                width: 100%;
             }
+            body {
+                font-family: arial,sans-serif;
+                font-size: 13px;
+            }
+            form{
+                width: 100%;
+                text-align: left;
+                padding: 5px 15px;
+                margin-top: 5px;
+                
+            }
+            .row{
+                margin-top: 15px; 
+            }
+            .btn{
+                display: inline-block;
+                font-weight: 400;
+                text-align: center;
+                vertical-align: middle;
+                user-select: none;
+                border: 1px solid transparent;
+                font-size: 1rem;
+                line-height: 1.5;
+                color: #fff;
+                background-color: #007bff;
+                border-color: #007bff;
+                padding: 5px;
+                margin-left: -10px;
+            }
+            .btn:hover{
+                color:white;
+                background-color: #036cdd;
+            }
+            #tiny{
+                font-size: 11px;
+            }
+            @media (max-width: 1050px){
+                #tiny, #no{
+                    display: none;
+                }
+            }
+            .footer{
+                color: gray;
+                background-color: #f2f2f2;
+                padding: 8px 27px;
+                margin-top: 20px;
+                font-size: 15px;
+                border: 1px solid rgba(128, 128, 128, 0.293);
+
+            }
+            .footer-cont {
+                background-color: #f2f2f2;
+                padding: 8px 30px;
+            }
+            .footer-cont a{
+                color: gray;
+                padding-right: 30px;
+                font-size: 15px;
+            }
+
+            .footer-cont a:hover{
+                color: black;
+                text-decoration: none;
+            }
+            p{
+                margin: 0px;
+            }
+
         </style>
     </head>
     <body>
         <div class="container-fluid">
+
             <div class="row">
-                <div class="col-lg-6">
-                    <img id="den" src="google.png" alt="Google Images" >
-                </div>
-                <div class="col-lg-6">
-                    <a href="index.html">Google Search</a>       
-                </div>
+                <div class="col-lg-6"><img id="den" src="google.png" alt="Google Images" ></div>
+                <div class="col-lg-5"></div>
+                <div class="col-lg-1"><a id = "ad" href="index.html">Google Search</a></div>
             </div>
+
             <div class="row">
-                <div class="col-lg-12">
-                    <h2 id="title">Advanced Search</h2>
-                </div>
+                <div class="col-lg-12"><h2 id="title">Advanced Search</h2></div>
             </div>
+
             <div class="row">
-                <div class="col-lg-12">
-                    <p class="line"></p>
-            </div>
+                <div class="col-lg-12"><p class="line"></p></div>
             </div>
             
-           <form action="/search" id="s1zaZb" method="GET" name="f">
-                
+           <form style="width: 100% ;"action="https://google.com/search" method="GET" name="f">
+                <div class="row">
+                    <div class="col-lg-2" >Find these pages...</div>
+                    <div class="col-lg-4" id="empty"></div>
+                    <div class="col-lg-2"id="no">To do this in the search box:</div>
+                    <div class="col-lg-4"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-2">Containing all of these words:</div>
+                    <div class="col-lg-4" ><input type="text"class="form-control" name="as_q"></div>
+                    <div class="col-lg-2" id="tiny"> Write down the important words: taupe vole</div>
+                    <div class="col-lg-4"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-2">Contains exactly the following word or words:</div>
+                    <div class="col-lg-4" ><input class="form-control"type="text"  name="as_epq"></div>
+                    <div class="col-lg-2" id="tiny">Put all the words in quotes: "grizzly field mouse" </div>
+                    <div class="col-lg-4"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-2">Contain any of the following words:</div>
+                    <div class="col-lg-4" ><input class="form-control"type="text" name="as_oq"></div>
+                    <div class="col-lg-3" id="tiny">Type OR between all the words you want: miniature OR standard</div>
+                    <div class="col-lg-3"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-2">Does not contain any of the following words:</div>
+                    <div class="col-lg-4" ><input class="form-control"type="text" name="as_eq"></div>
+                    <div class="col-lg-2"id="tiny">Put a minus sign right in front of the words you don't want: -rodent, -"Jack Russell"</div>
+                    <div class="col-lg-4" ></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-2">From:</div>
+                    <div class="col-lg-2" ><input class="form-control" type="text"  name="as_nlo"></div>
+                    <div class="col-lg-2"><input class="form-control" type="text"  name="as_nhi"></div>
+                    <div class="col-lg-3" id="tiny">Put two dots between the numbers and add a unit of measurement at the end: 10..35 kg, $300..$500, 2010..2011"</div>
+                    <div class="col-lg-3"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-9"><p class="line"></p></div>
+                    <div class="col-lg-3"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-2">If you want to filter the results even more...</div>
+                    <div class="col-lg-10"></div>  
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-2">Language:</div>
+                    <div class="col-lg-4">
+                        <select class="form-control form-control-sm" name="lr">
+                            <option value>any language</option>
+                            <option value="lang_af">Afrikaans</option>
+                            <option value="lang_ar">Arabic</option>
+                            <option value="lang_hy">Armenian</option>
+                            <option value="lang_be">Belarusian</option>
+                            <option value="lang_bg">Bulgarian</option>
+                            <option value="lang_ca">Catalan</option>
+                            <option value="lang_zh-CN">Chinese (Simplified)</option>
+                            <option value="lang_zh-TW">Chinese (Traditional)</option>
+                            <option value="lang_hr">Croatian</option>
+                            <option value="lang_cs">Czech</option>
+                            <option value="lang_da">Danish</option>
+                            <option value="lang_nl">Dutch</option>
+                            <option value="lang_en">English</option>
+                            <option value="lang_eo">Esperanto</option>
+                            <option value="lang_et">Estonian</option>
+                            <option value="lang_fi">Finnish</option>
+                            <option value="lang_fr">French</option>
+                            <option value="lang_de">German</option>
+                            <option value="lang_el">Greek</option>
+                            <option value="lang_iw">Hebrew</option>
+                            <option value="lang_hi">Hindi</option>
+                            <option value="lang_hu">Hungarian</option>
+                            <option value="lang_is">Icelandic</option>
+                            <option value="lang_id">Indonesian</option>
+                            <option value="lang_it">Italian</option>
+                            <option value="lang_ja">Japanese</option>
+                            <option value="lang_ko">Korean</option>
+                            <option value="lang_lv">Latvian</option>
+                            <option value="lang_lt">Lithuanian</option>
+                            <option value="lang_no">Norwegian</option>
+                            <option value="lang_fa">Persian</option>
+                            <option value="lang_pl">Polish</option>
+                            <option value="lang_pt">Portuguese</option>
+                            <option value="lang_ro">Romanian</option>
+                            <option value="lang_ru">Russian</option>
+                            <option value="lang_sr">Serbian</option>
+                            <option value="lang_sk">Slovak</option>
+                            <option value="lang_sl">Slovenian</option>
+                            <option value="lang_es">Spanish</option>
+                            <option value="lang_sw">Swahili</option>
+                            <option value="lang_sv">Swedish</option>
+                            <option value="lang_th">Thai</option>
+                            <option value="lang_tr">Turkish</option>
+                            <option value="lang_uk">Ukrainian</option>
+                            <option value="lang_vi">Vietnamese</option>
+                        </select>
+                      </div>
+                      
+                    <div class="col-lg-3" id="tiny">Find pages in the language you selected.</div>
+                    <div class="col-lg-3"></div>
+                    
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-2">Region:</div>
+                    <div class="col-lg-4">
+                        <select class="form-control form-control-sm" name="cr">
+                            <option value>any region</option>
+                            <option value="countryAF">Afghanistan</option>
+                            <option value="countryAL">Albania</option>
+                            <option value="countryDZ">Algeria</option>
+                            <option value="countryAS">American Samoa</option>
+                            <option value="countryAD">Andorra</option>
+                            <option value="countryAO">Angola</option>
+                            <option value="countryAI">Anguilla</option>
+                            <option value="countryAQ">Antarctica</option>
+                            <option value="countryAG">Antigua & Barbuda</option>
+                            <option value="countryAR">Argentina</option>
+                            <option value="countryAM">Armenia</option>
+                            <option value="countryAW">Aruba</option>
+                            <option value="countryAU">Australia</option>
+                            <option value="countryAT">Austria</option>
+                            <option value="countryAZ">Azerbaijan</option>
+                            <option value="countryBS">Bahamas</option>
+                            <option value="countryBH">Bahrain</option>
+                            <option value="countryBD">Bangladesh</option>
+                            <option value="countryBB">Barbados</option>
+                            <option value="countryBY">Belarus</option>
+                            <option value="countryBE">Belgium</option>
+                            <option value="countryBZ">Belize</option>
+                            <option value="countryBJ">Benin</option>
+                            <option value="countryBM">Bermuda</option>
+                            <option value="countryBT">Bhutan</option>
+                            <option value="countryBO">Bolivia</option>
+                            <option value="countryBA">Bosnia & Herzegovina</option>
+                            <option value="countryBW">Botswana</option>
+                            <option value="countryBV">Bouvet Island</option>
+                            <option value="countryBR">Brazil</option>
+                            <option value="countryIO">British Indian Ocean Territory</option>
+                            <option value="countryVG">British Virgin Islands</option>
+                            <option value="countryBN">Brunei</option>
+                            <option value="countryBG">Bulgaria</option>
+                            <option value="countryBF">Burkina Faso</option>
+                            <option value="countryBI">Burundi</option>
+                            <option value="countryKH">Cambodia</option>
+                            <option value="countryCM">Cameroon</option>
+                            <option value="countryCA">Canada</option>
+                            <option value="countryCV">Cape Verde</option>
+                            <option value="countryKY">Cayman Islands</option>
+                            <option value="countryCF">Central African Republic</option>
+                            <option value="countryTD">Chad</option>
+                            <option value="countryCL">Chile</option>
+                            <option value="countryCN">China</option>
+                            <option value="countryCX">Christmas Island</option>
+                            <option value="countryCC">Cocos (Keeling) Islands</option>
+                            <option value="countryCO">Colombia</option>
+                            <option value="countryKM">Comoros</option>
+                            <option value="countryCG">Congo - Brazzaville</option>
+                            <option value="countryCD">Congo - Kinshasa</option>
+                            <option value="countryCK">Cook Islands</option>
+                            <option value="countryCR">Costa Rica</option>
+                            <option value="countryCI">Côte d’Ivoire</option>
+                            <option value="countryHR">Croatia</option>
+                            <option value="countryCU">Cuba</option>
+                            <option value="countryCY">Cyprus</option>
+                            <option value="countryCZ">Czechia</option>
+                            <option value="countryDK">Denmark</option>
+                            <option value="countryDJ">Djibouti</option>
+                            <option value="countryDM">Dominica</option>
+                            <option value="countryDO">Dominican Republic</option>
+                            <option value="countryEC">Ecuador</option>
+                            <option value="countryEG">Egypt</option>
+                            <option value="countrySV">El Salvador</option>
+                            <option value="countryGQ">Equatorial Guinea</option>
+                            <option value="countryER">Eritrea</option>
+                            <option value="countryEE">Estonia</option>
+                            <option value="countrySZ">Eswatini</option>
+                            <option value="countryET">Ethiopia</option>
+                            <option value="countryFK">Falkland Islands (Islas Malvinas)</option>
+                            <option value="countryFO">Faroe Islands</option>
+                            <option value="countryFJ">Fiji</option>
+                            <option value="countryFI">Finland</option>
+                            <option value="countryFR">France</option>
+                            <option value="countryGF">French Guiana</option>
+                            <option value="countryPF">French Polynesia</option>
+                            <option value="countryTF">French Southern Territories</option>
+                            <option value="countryGA">Gabon</option>
+                            <option value="countryGM">Gambia</option>
+                            <option value="countryGE">Georgia</option>
+                            <option value="countryDE">Germany</option>
+                            <option value="countryGH">Ghana</option>
+                            <option value="countryGI">Gibraltar</option>
+                            <option value="countryGR">Greece</option>
+                            <option value="countryGL">Greenland</option>
+                            <option value="countryGD">Grenada</option>
+                            <option value="countryGP">Guadeloupe</option>
+                            <option value="countryGU">Guam</option>
+                            <option value="countryGT">Guatemala</option>
+                            <option value="countryGN">Guinea</option>
+                            <option value="countryGW">Guinea-Bissau</option>
+                            <option value="countryGY">Guyana</option>
+                            <option value="countryHT">Haiti</option>
+                            <option value="countryHM">Heard & McDonald Islands</option>
+                            <option value="countryHN">Honduras</option>
+                            <option value="countryHK">Hong Kong</option>
+                            <option value="countryHU">Hungary</option>
+                            <option value="countryIS">Iceland</option>
+                            <option value="countryIN">India</option>
+                            <option value="countryID">Indonesia</option>
+                            <option value="countryIR">Iran</option>
+                            <option value="countryIQ">Iraq</option>
+                            <option value="countryIE">Ireland</option>
+                            <option value="countryIL">Israel</option>
+                            <option value="countryIT">Italy</option>
+                            <option value="countryJM">Jamaica</option>
+                            <option value="countryJP">Japan</option>
+                            <option value="countryJO">Jordan</option>
+                            <option value="countryKZ">Kazakhstan</option>
+                            <option value="countryKE">Kenya</option>
+                            <option value="countryKI">Kiribati</option>
+                            <option value="countryKW">Kuwait</option>
+                            <option value="countryKG">Kyrgyzstan</option>
+                            <option value="countryLA">Laos</option>
+                            <option value="countryLV">Latvia</option>
+                            <option value="countryLB">Lebanon</option>
+                            <option value="countryLS">Lesotho</option>
+                            <option value="countryLR">Liberia</option>
+                            <option value="countryLY">Libya</option>
+                            <option value="countryLI">Liechtenstein</option>
+                            <option value="countryLT">Lithuania</option>
+                            <option value="countryLU">Luxembourg</option>
+                            <option value="countryMO">Macao</option>
+                            <option value="countryMG">Madagascar</option>
+                            <option value="countryMW">Malawi</option>
+                            <option value="countryMY">Malaysia</option>
+                            <option value="countryMV">Maldives</option>
+                            <option value="countryML">Mali</option>
+                            <option value="countryMT">Malta</option>
+                            <option value="countryMH">Marshall Islands</option>
+                            <option value="countryMQ">Martinique</option>
+                            <option value="countryMR">Mauritania</option>
+                            <option value="countryMU">Mauritius</option>
+                            <option value="countryYT">Mayotte</option>
+                            <option value="countryMX">Mexico</option>
+                            <option value="countryFM">Micronesia</option>
+                            <option value="countryMD">Moldova</option>
+                            <option value="countryMC">Monaco</option>
+                            <option value="countryMN">Mongolia</option>
+                            <option value="countryMS">Montserrat</option>
+                            <option value="countryMA">Morocco</option>
+                            <option value="countryMZ">Mozambique</option>
+                            <option value="countryMM">Myanmar (Burma)</option>
+                            <option value="countryNA">Namibia</option>
+                            <option value="countryNR">Nauru</option>
+                            <option value="countryNP">Nepal</option>
+                            <option value="countryNL">Netherlands</option>
+                            <option value="countryNC">New Caledonia</option>
+                            <option value="countryNZ">New Zealand</option>
+                            <option value="countryNI">Nicaragua</option>
+                            <option value="countryNE">Niger</option>
+                            <option value="countryNG">Nigeria</option>
+                            <option value="countryNU">Niue</option>
+                            <option value="countryNF">Norfolk Island</option>
+                            <option value="countryKP">North Korea</option>
+                            <option value="countryMK">North Macedonia</option>
+                            <option value="countryMP">Northern Mariana Islands</option>
+                            <option value="countryNO">Norway</option>
+                            <option value="countryOM">Oman</option>
+                            <option value="countryPK">Pakistan</option>
+                            <option value="countryPW">Palau</option>
+                            <option value="countryPS">Palestine</option>
+                            <option value="countryPA">Panama</option>
+                            <option value="countryPG">Papua New Guinea</option>
+                            <option value="countryPY">Paraguay</option>
+                            <option value="countryPE">Peru</option>
+                            <option value="countryPH">Philippines</option>
+                            <option value="countryPN">Pitcairn Islands</option>
+                            <option value="countryPL">Poland</option>
+                            <option value="countryPT">Portugal</option>
+                            <option value="countryPR">Puerto Rico</option>
+                            <option value="countryQA">Qatar</option>
+                            <option value="countryRE">Réunion</option>
+                            <option value="countryRO">Romania</option>
+                            <option value="countryRU">Russia</option>
+                            <option value="countryRW">Rwanda</option>
+                            <option value="countryWS">Samoa</option>
+                            <option value="countrySM">San Marino</option>
+                            <option value="countryST">São Tomé & Príncipe</option>
+                            <option value="countrySA">Saudi Arabia</option>
+                            <option value="countrySN">Senegal</option>
+                            <option value="countryRS">Serbia</option>
+                            <option value="countrySC">Seychelles</option>
+                            <option value="countrySL">Sierra Leone</option>
+                            <option value="countrySG">Singapore</option>
+                            <option value="countrySK">Slovakia</option>
+                            <option value="countrySI">Slovenia</option>
+                            <option value="countrySB">Solomon Islands</option>
+                            <option value="countrySO">Somalia</option>
+                            <option value="countryZA">South Africa</option>
+                            <option value="countryGS">South Georgia & South Sandwich Islands</option>
+                            <option value="countryKR">South Korea</option>
+                            <option value="countryES">Spain</option>
+                            <option value="countryLK">Sri Lanka</option>
+                            <option value="countrySH">St. Helena</option>
+                            <option value="countryKN">St. Kitts & Nevis</option>
+                            <option value="countryLC">St. Lucia</option>
+                            <option value="countryPM">St. Pierre & Miquelon</option>
+                            <option value="countryVC">St. Vincent & Grenadines</option>
+                            <option value="countrySD">Sudan</option>
+                            <option value="countrySR">Suriname</option>
+                            <option value="countrySJ">Svalbard & Jan Mayen</option>
+                            <option value="countrySE">Sweden</option>
+                            <option value="countryCH">Switzerland</option>
+                            <option value="countrySY">Syria</option>
+                            <option value="countryTW">Taiwan</option>
+                            <option value="countryTJ">Tajikistan</option>
+                            <option value="countryTZ">Tanzania</option>
+                            <option value="countryTH">Thailand</option>
+                            <option value="countryTG">Togo</option>
+                            <option value="countryTK">Tokelau</option>
+                            <option value="countryTO">Tonga</option>
+                            <option value="countryTT">Trinidad & Tobago</option>
+                            <option value="countryTN">Tunisia</option>
+                            <option value="countryTR">Turkey</option>
+                            <option value="countryTM">Turkmenistan</option>
+                            <option value="countryTC">Turks & Caicos Islands</option>
+                            <option value="countryTV">Tuvalu</option>
+                            <option value="countryUM">U.S. Outlying Islands</option>
+                            <option value="countryVI">U.S. Virgin Islands</option>
+                            <option value="countryUG">Uganda</option>
+                            <option value="countryUA">Ukraine</option>
+                            <option value="countryAE">United Arab Emirates</option>
+                            <option value="countryGB">United Kingdom</option>
+                            <option value="countryUS">United States</option>
+                            <option value="countryUY">Uruguay</option>
+                            <option value="countryUZ">Uzbekistan</option>
+                            <option value="countryVU">Vanuatu</option>
+                            <option value="countryVA">Vatican City</option>
+                            <option value="countryVE">Venezuela</option>
+                            <option value="countryVN">Vietnam</option>
+                            <option value="countryWF">Wallis & Futuna</option>
+                            <option value="countryEH">Western Sahara</option>
+                            <option value="countryYE">Yemen</option>
+                            <option value="countryZM">Zambia</option>
+                            <option value="countryZW">Zimbabwe</option>
+                        </select>
+                            </div>
+                    <div class="col-lg-3" id="tiny">Find pages published in a specific region.</div>
+                    <div class="col-lg-3"></div>
+                </div>
                 
                 <div class="row">
-                    <div class="col-lg-3">
-                        Find these pages...
-                    </div>
-                    <div class="col-lg-6" id="empty">
+                    <div class="col-lg-2">Last updated:</div>
+                    <div class="col-lg-4" >
+                        <select class="form-control form-control-sm" name="as_qdr">
+                            <option value="all">anytime</option>
+                            <option value="d">past 24 hours</option>
+                            <option value="w">past week</option>
+                            <option value="m">past month</option>
+                            <option value="y">past year</option>
+                        </select></div>
+                    <div class="col-lg-3" id="tiny">Find pages that have been updated within the time period you set.</div>
+                    <div class="col-lg-3"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-2">Site or domain name:</div>
+                    <div class="col-lg-4" ><input class="form-control"name="as_sitesearch"></div>
+                    <div class="col-lg-3" id="tiny">Search within a site (such as wikipedia.org) or limit results to a domain such as .edu, .org, or .gov.</div>
+                    <div class="col-lg-3"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-2">Where the terms appear:</div>
+                    <div class="col-lg-4" >
+                        <select class="form-control" name="as_occt">
+                            <option value="any">anywhere in the page</option>
+                            <option value="title">in the title of the page</option>
+                            <option value="body">in the text of the page</option>
+                            <option value="URL">in the URL of the page</option>
+                            <option value="links">in links to the page</option>     
+                        </select></div>
+                    <div class="col-lg-3" id="tiny">Where the terms appear:Search for terms across the entire page, page title, or web address, or in links to the page you're looking for.</div>
+                    <div class="col-lg-3"></div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-2"><a href="https://support.google.com/websearch/answer/510?visit_id=638239908460156807-812353632&p=adv_safesearch&rd=1">SafeSearch:</a></div>
+                    <div class="col-lg-4" >
+                        <select class="form-control"name="safe">
+                            <option value="images">Show explicit results</option>
+                            <option value="active">Hide explicit results</option>
+                        </select></div>
+                    <div class="col-lg-3" id="tiny">Tell <a href="https://support.google.com/websearch/answer/510?visit_id=638239908460156807-812353632&p=adv_safesearch&rd=1">SafeSearch</a> whether to filter explicit content.</div>
+                    <div class="col-lg-3"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-2">File type:</div>
+                    <div class="col-lg-4" >
+                        <select class="form-control"name="as_filetype">
+                            <option value>any format</option>
+                            <option value="pdf">Adobe Acrobat PDF (.pdf)</option>
+                            <option value="ps">Adobe Postscript (.ps)</option>
+                            <option value="dwf">Autodesk DWF (.dwf)</option>
+                            <option value="kml">Google Earth KML (.kml)</option>
+                            <option value="kmz">Google Earth KMZ (.kmz)</option>
+                            <option value="xls">Microsoft Excel (.xls)</option>
+                            <option value="ppt">Microsoft PowerPoint (.ppt)</option>
+                            <option value="doc">Microsoft Word (.doc)</option>
+                            <option value="rtf">Rich Text Format (.rtf)</option>
+                            <option value="swf">Shockwave Flash (.swf)</option>
+                        </select></div>
+                    <div class="col-lg-3" id="tiny">Find the types of pages you want.</div>
+                    <div class="col-lg-3"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-2"><a href="https://support.google.com/websearch/answer/29508?hl=tr&visit_id=638239908369471827-1800415947&p=ws_images_usagerights&rd=1">Usage rights:</a></div>
+                    <div class="col-lg-4">
+                        <!-- I couldn't find a way to implement this feature.-->
+                        <select class="form-control" name="user_rights">
+                            <option value>all</option>
+                            <option value="cl">Creative Commons licences</option>
+                            <option value="ol">Commercial and other licences</option>
+                            <option value="open for use or sharing,even commercially">open for use or sharing,even commercially</option>
+                            <option value="modification">open for use, share, or modification</option>
+                            <option value="commercial">open to use, sharing, or modification, even commercially</option>
+                        </select>
                         
+                        
+                           
                     </div>
-                    <div class="col-lg-3">
-                        To do this in the search box:
-                    </div>
+                    <div class="col-lg-3" id="tiny">Find the pages you're allowed to use.</div>
+                    <div class="col-lg-3"></div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3">
-                        Containing all of these words:
-                    </div>
-                    <div class="col-lg-6" >
-                        <input id = "input" type="text" name="q">
-                    </div>
-                    <div class="col-lg-3">
-                        Write down the important words: taupe vole
-
-                    </div>
+                    <div class="col-lg-5"></div>
+                    <div class="col-lg-7"><input name="tbs" type="hidden" value><input type="submit" class="btn" value="Advanced Search"></div>          
                 </div>
-            
+                <div class="row">
+                    <div class="col-lg-9"><p class="line"></p></div>
+                    <div class="col-lg-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2">You can also...</div>
+                    <div class="col-lg-10"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2"><a href="https://support.google.com/websearch/answer/2466433?visit_id=638241406880413781-929604166&p=adv_pages_similar&hl=tr&rd=1">Find pages similar to URL</a></div>
+                    <div class="col-lg-10"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2"><a href="https://support.google.com/websearch/answer/54068?hl=tr&visit_id=638241406882097895-1031993914&p=adv_pages_visited&rd=1">Search the pages you visit</a></div>
+                    <div class="col-lg-10"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2"><a href="https://support.google.com/websearch/answer/2466433?visit_id=638241406882097895-1031993914&p=adv_operators&hl=tr&rd=1">Use operators in the search box</a></div>
+                    <div class="col-lg-10"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2"><a href="https://www.google.com/preferences?hl=tr">Customize your search settings</a></div>
+                    <div class="col-lg-10"></div>
+                </div>
+
                 
-           </form>
-            
-            
-
-
+            </form>
         </div>
-          
+        <div class="footer">
+            <p>Turkey</p>
+        </div>
+        <div class="footer-cont">
+            <a href="https://support.google.com/websearch/?visit_id=638247933436880366-3039640646&hl=tr&rd=2#topic=3378866">Help</a>
+            <a href="https://policies.google.com/privacy?hl=tr&fg=1">Privacy</a>
+            <a href="https://policies.google.com/terms?hl=tr&fg=1">Terms</a>
+        </div>
     </body>
 </html>
